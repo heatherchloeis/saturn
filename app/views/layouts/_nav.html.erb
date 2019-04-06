@@ -1,0 +1,42 @@
+<nav class="row no-gutters navbar navbar-expand-md col-10 offset-1">
+	<!--Home Page-->
+	<%= link_to "Saturn", root_path, class: "navbar-brand" %>
+
+<!--Navigation Button-->
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navContent" aria-controls="navContent" aria-expanded="false" aria-label="Toggle navigation">
+		<i class="fas fa-bars"></i>
+	</button>
+
+<!--Navigation Links-->
+	<div class="collapse navbar-collapse" id="navContent">
+		<ul class="navbar-nav">
+			<!--About Page-->
+			<li class="col-md-2 offset-md-4 nav-item">
+				<%= link_to "About", "#", class: "nav-link" %>
+			</li>
+			<!--Live Stream Page-->
+			<li class="col-md-2 nav-item">
+				<%= link_to "Live Stream", "#", class: "nav-link" %>
+			</li>
+			<!--Contact Page-->
+			<li class="col-md-2 nav-item">
+				<%= link_to "Contact", "#", class: "nav-link" %>
+			</li>
+			<!--Social Media Links-->
+			<li class="col-md-2 nav-item">
+				<a href="">
+					<i class=""></i>
+				</a>
+				<a href="">
+					<i class=""></i>
+				</a>
+				<a href="">
+					<i class=""></i>
+				</a>
+				<a href="">
+					<i class=""></i>
+				</a>
+			</li>
+		</ul>
+	</div>
+</nav>
