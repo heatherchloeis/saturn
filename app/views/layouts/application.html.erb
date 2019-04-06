@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -8,22 +9,34 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-5MLJ5KL');</script>
     <!-- End Google Tag Manager -->
+
     <title><%= full_title(yield(:title)) %></title>
+
+    <!--Default Rails Application Settings-->
     <%= render 'layouts/rails_default' %>
+
+    <!--Internet Explorer Shim-->
     <%= render 'layouts/shim' %>
   </head>
 
-  <body class="container-fluid parent">
+  <body class="container-fluid">
+
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5MLJ5KL"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
+
+    <!--Flash Messages-->
     <% flash.each do |message_type, message| %>
       <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
     <% end %>
+
+    <!--Navigation-->
     <%= render 'layouts/nav' %>
+
+    <!--Main Content-->
     <%= yield %>
-    <%= render 'layouts/footer' %>
+
     <!-- <%= debug(params) if Rails.env.development? %> -->
   </body>
 </html>

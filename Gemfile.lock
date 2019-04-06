@@ -88,7 +88,6 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.1.5)
     crass (1.0.4)
-    duktape (2.0.1.0)
     erubi (1.8.0)
     execjs (2.7.0)
     ffi (1.10.0-x64-mingw32)
@@ -235,12 +234,11 @@ PLATFORMS
 DEPENDENCIES
   bcrypt (~> 3.1.7)
   bootsnap (>= 1.1.0)
-  bootstrap (>= 4.3.1)
+  bootstrap (~> 4.3.1)
   byebug
   capybara (>= 2.15, < 4.0)
   chromedriver-helper (= 1.2.0)
   coffee-rails (~> 4.2)
-  duktape
   jbuilder (~> 2.5)
   jquery-rails (= 4.3.1)
   jquery-ui-rails
