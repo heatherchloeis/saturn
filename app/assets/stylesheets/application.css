@@ -13,3 +13,36 @@
  *= require_tree .
  *= require_self
  */
+
+@import "bootstrap";
+
+@font-face {
+	font-family: "SciFly-Sans";
+	src: url("../fonts/SciFly-Sans/SciFly-Sans") format("ttf");
+}
+
+body {
+	margin: 0 !important;
+	padding: 0 !important;
+	overflow-x: hidden;
+	color: #fff;
+	font-family: "Raleway";
+	font-size: calc(12px + (18 - 12) * ((100vw - 320px) / (1920 - 320)));
+	min-height: 100vh;
+	height: 100%;
+	background-color: rgb(15,14,17);
+	@include filter-gradient(#0f0e11, #171519, vertical);
+	@include background-image(linear-gradient(top, rgba(15,14,17,1) 0%,rgba(23,21,25,1) 100%));
+}
+
+@include media-breakpoint-down(sm) {
+}
+
+@include media-breakpoint-down(md) {
+}
+
+@include media-breakpoint-up(lg) {
+}
+
+@include media-breakpoint-up(xl) {
+}
