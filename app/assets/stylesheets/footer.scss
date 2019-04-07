@@ -1,0 +1,11 @@
+footer {
+	width: 100%;
+	a {
+		padding: 10px;
+		float: right;
+		color: rgba(0,0,0,1);
+		&:hover {
+			color: rgba(0,0,0,.5);
+		}
+	}
+}

@@ -1,0 +1,31 @@
+.navbar {
+	a {
+		font-family: "Raleway", sans-serif;
+		font-size: calc(14px + (24 - 14) * ((100vw - 320px) / (1920 - 320)));
+		text-align: right;
+		text-transform: uppercase;
+		color: rgba(255,255,255,1);
+		&:hover {
+			text-decoration: none;
+			color: rgba(255,255,255,.5);
+		}
+	}
+}
+
+.navbar-nav {
+	width: 100%;
+}
+
+.navbar-brand {
+	font-size: calc(14px + (24 - 14) * ((100vw - 320px) / (1920 - 320)));
+}
+
+.navbar-toggler {
+	color: #fff;
+}
+
+.social-media {
+	position: relative;
+	top: 10px;
+	text-align: right;
+}

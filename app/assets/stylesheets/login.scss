@@ -1,0 +1,27 @@
+.login-heading {
+	font-family: "SciFly";
+	font-size: calc(36px + (100 - 36) * ((100vw - 320px) / (1920 - 320)));
+	text-transform: uppercase;
+}
+
+.login-link {
+	color: rgba(2255,255,255,1);
+	text-decoration: underline;
+	&:hover {
+		color: rgba(2255,255,255,.5);
+		text-decoration: none;
+	}
+}
+
+.btn-login {
+	float: right;
+	border: none;
+	background-color: transparent;
+	color: rgba(2255,255,255,1);
+	font-family: "SciFly";
+	font-size: calc(14px + (24 - 14) * ((100vw - 320px) / (1920 - 320)));
+	text-transform: uppercase;
+	&:hover {
+		color: rgba(2255,255,255,.5);
+	}
+}

@@ -17,8 +17,12 @@
 @import "bootstrap";
 
 @font-face {
-	font-family: "SciFly-Sans";
-	src: url("../fonts/SciFly-Sans/SciFly-Sans") format("ttf");
+    font-family: 'SciFly';
+    src: url('SciFly-Sans.ttf') format('ttf'),
+    		 url('SciFly-Sans.woff2') format('woff2'),
+         url('SciFly-Sans.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
 body {
@@ -36,35 +40,9 @@ body {
 	background: linear-gradient(to bottom, rgba(15,14,17,1) 0%,rgba(23,21,25,1) 100%);
 }
 
-nav a {
-	font-family: "Raleway", sans-serif;
-	font-size: calc(14px + (24 - 14) * ((100vw - 320px) / (1920 - 320)));
-	text-transform: uppercase;
-	color: rgba(255,255,255,1);
-	&:hover {
-		text-decoration: none;
-		color: rgba(255,255,255,.5);
-	}
-}
-
-.navbar-brand {
-	font-size: calc(14px + (24 - 14) * ((100vw - 320px) / (1920 - 320)));
-}
-
-.navbar-toggler {
-	color: #fff;
-}
-
 main {
 	position: relative;
 	min-height: calc(100vh - 100px);
-}
-
-.logo-text {
-	position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-	width: 100%;
 }
 
 @include media-breakpoint-down(sm) {

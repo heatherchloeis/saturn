@@ -1,0 +1,28 @@
+<%= provide(:title, "Login") %>
+
+<div class="col-10 offset-1">
+	<p class="login-heading">Login</p>
+	<div class="col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-sm-10 offset-sm-1">
+		<%= form_for(:session, url: login_path) do |f| %>
+			<div class="form-group">
+				<%= f.label :email %>
+				<%= f.text_field :email, class: "form-control form-control-sm" %>
+			</div>
+
+			<div class="form-group">
+				<%= f.label :password %>
+				<%= link_to "(forgot password)", "#", class: "login-link" %>
+				<%= f.password_field :password, class: "form-control form-control-sm" %>
+			</div>
+
+			<div class="form-group form-check">
+				<%= f.check_box :remember_me, class: "form-check-input" %>
+				<%= f.label :remember_me, class: "form-check-label login-hint" do %>
+					Remember me on this computer
+				<% end %>
+			</div>
+
+			<%= f.submit "submit", class: "btn-login" %>
+		<% end %>
+	</div>
+</div>

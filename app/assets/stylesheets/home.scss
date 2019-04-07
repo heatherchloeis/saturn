@@ -1,0 +1,41 @@
+.logo-text {
+	position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%);
+  transform: translateX(-50%);
+}
+
+.flash-repeat {
+	animation-name: flash-repeat;
+	animation-delay: 100ms;
+	animation-duration: 5000ms;
+	animation-iteration-count: infinite;
+}
+
+@keyframes flash-repeat {
+	0% {
+		opacity: 0;
+	}
+	10% {
+		opacity: 1;
+	}
+	12% {
+		opacity: .5;
+	}
+	15% {
+		opacity: 1;
+	}
+	20% {
+		opacity: 0;
+	}
+	25% {
+		opacity: 1;
+	}
+	28% {
+		opacity: 0;
+	}
+	30% {
+		opacity: 1;
+	}
+}

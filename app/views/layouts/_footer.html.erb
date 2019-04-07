@@ -1,0 +1,11 @@
+<footer class="fixed-bottom">
+	<% if logged_in? %>
+		<%= link_to logout_path, method: "delete" do %>
+			<i class="fas fa-lock"></i>
+		<% end %>
+	<% else %>
+		<%= link_to login_path do %>
+			<i class="fas fa-unlock"></i>
+		<% end %>
+	<% end %>
+</footer>
