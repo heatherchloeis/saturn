@@ -1,10 +1,10 @@
-.login-heading {
+.signup-heading {
 	font-family: "SciFly";
 	font-size: calc(36px + (100 - 36) * ((100vw - 320px) / (1920 - 320)));
 	text-transform: uppercase;
 }
 
-.login-link {
+.signup-link {
 	color: rgba(2255,255,255,1);
 	text-decoration: underline;
 	&:hover {

@@ -22,7 +22,8 @@
 				<% end %>
 			</div>
 
-			<%= f.submit "submit", class: "btn-login" %>
+			<%= f.submit "submit", class: "btn-generic" %>
+			<p>New member? <%= link_to "sign up", signup_path, class: "login-link" %></p>
 		<% end %>
 	</div>
 </div>

@@ -45,6 +45,19 @@ main {
 	min-height: calc(100vh - 100px);
 }
 
+.btn-generic {
+	float: right;
+	border: none;
+	background-color: transparent;
+	color: rgba(2255,255,255,1);
+	font-family: "SciFly";
+	font-size: calc(14px + (24 - 14) * ((100vw - 320px) / (1920 - 320)));
+	text-transform: uppercase;
+	&:hover {
+		color: rgba(2255,255,255,.5);
+	}
+}
+
 @include media-breakpoint-down(sm) {
 }
 

@@ -3,6 +3,7 @@ require 'test_helper'
 class UserTest < ActiveSupport::TestCase
 	def setup
 		@user = 			User.new(email: "user@example.com",
+													 username: "user_user",
 													 password: "password",
 													 password_confirmation: "password")
 		@other_user = User.new(email: "other_user@example.com",
@@ -14,19 +15,22 @@ class UserTest < ActiveSupport::TestCase
 		assert @user.valid?
 	end
 
-	test "email and password should be present" do 
+	test "email, username and password should be present" do 
 		@user.email = "   "
+		@user.username = "   "
 		@user.password = "   "
 		assert_not @user.valid?
 	end
 
-	test "password should have min characters" do
+	test "username and password should have min characters" do
+		@user.username = "a" * 3
 		@user.password = "a" * 7
 		assert_not @user.valid?		
 	end
 
-	test "email should have max characters" do
+	test "email and username should have max characters" do
 		@user.email = "a" * 241 + "example.com"
+		@user.username = "a" * 51
 		assert_not @user.valid?
 	end
 
@@ -46,15 +50,19 @@ class UserTest < ActiveSupport::TestCase
 		end
 	end
 
-	test "email should be unique" do
+	test "email and username should be unique" do
 		duplicate_user = @user.dup
 		duplicate_user.email = @user.email.upcase
+		duplicate_user.username = @user.username.upcase
 		@user.save
 		assert_not duplicate_user.valid?
 		mixed_case_email = "UsEr@ExAmPlE.com"
+		mixed_case_username = "UsEr_UsEr"
 		@user.email = mixed_case_email
+		@user.username = mixed_case_username
 		@user.save
 		assert_equal mixed_case_email.downcase, @user.reload.email
+		assert_equal mixed_case_username.downcase, @user.reload.username
 	end
 
 	# User login/logout testing suite

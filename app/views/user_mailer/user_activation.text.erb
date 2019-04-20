@@ -1,0 +1,7 @@
+Hiya <%= @user.username %>,
+
+Welcome to the Saturn team! ＼(^ ω ^)／ We're so happy to have you! 
+
+Please take a moment to activate your account with us via the link below!!! (ﾉ●ω●)ﾉ*:･ﾟ✧
+
+<%= edit_user_activation_url(@user.activation_token, email: @user.email) %>

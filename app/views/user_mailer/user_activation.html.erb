@@ -1,0 +1,7 @@
+<p>Hiya <%= @user.username %>,</p>
+
+<p>Welcome to the Saturn team! ＼(^ ω ^)／ We're so happy to have you!</p>
+
+<p>Please take a moment to activate your account with us via the link below!!! (ﾉ●ω●)ﾉ*:･ﾟ✧ <br>
+
+<%= link_to "Activate!", edit_user_activation_url(@user.activation_token, email: @user.email) %></p>

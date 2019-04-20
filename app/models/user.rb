@@ -1,11 +1,15 @@
 class User < ApplicationRecord
-	attr_accessor :remember_token, :reset_token
+	attr_accessor :remember_token, :activation_token, :reset_token
 
-	before_save :downcase_email
+	before_save :downcase_email, :downcase_username
+	before_create :create_activation_digest
 
 	validates :email,			presence: true,
 												length: { maximum: 240 },
 												format: { with: URI::MailTo::EMAIL_REGEXP },
+												uniqueness: { case_sensitive: false }
+	validates :username,	presence: true,
+												length: { minimum: 4, maximum: 50 },
 												uniqueness: { case_sensitive: false }
 	validates :password,	presence: true,
 												length: { minimum: 8 },
@@ -44,6 +48,16 @@ class User < ApplicationRecord
 		BCrypt::Password.new(digest).is_password?(token)
 	end
 
+	# Activates an account
+	def activate
+		update_columns(activated: true, activated_at: Time.zone.now)
+	end
+
+	# Sends the activation email
+	def send_activation_email
+		UserMailer.user_activation(self).deliver_now
+	end
+
 	# Creates the reset password attributes
 	def create_reset_digest
 		self.reset_token = User.new_token
@@ -63,5 +77,15 @@ class User < ApplicationRecord
 	private
 		def downcase_email
 			self.email = email.downcase
+		end
+
+		def downcase_username
+			self.username = username.downcase
+		end
+
+		# Creates and assigns activation token and digest
+		def create_activation_digest
+			self.activation_token = User.new_token
+			self.activation_digest = User.digest(activation_token)
 		end
 end
